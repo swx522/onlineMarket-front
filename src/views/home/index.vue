@@ -32,23 +32,23 @@ type LineChartDataItem = {
   orderAmount: number // 订单金额
 }
 
-// 默认图表数据
+// 默认图表数据（更真实的业务数据）
 const defaultLineChartData: LineChartDataItem[] = [
-  { date: '2026-01-01', orderCount: 10, orderAmount: 1093 },
-  { date: '2026-01-02', orderCount: 20, orderAmount: 2230 },
-  { date: '2026-01-03', orderCount: 33, orderAmount: 3623 },
-  { date: '2026-01-04', orderCount: 50, orderAmount: 6423 },
-  { date: '2026-01-05', orderCount: 80, orderAmount: 8492 },
-  { date: '2026-01-06', orderCount: 60, orderAmount: 6293 },
-  { date: '2026-01-07', orderCount: 20, orderAmount: 2293 },
-  { date: '2026-01-08', orderCount: 60, orderAmount: 6293 },
-  { date: '2026-01-09', orderCount: 50, orderAmount: 5293 },
-  { date: '2026-01-10', orderCount: 30, orderAmount: 3293 },
-  { date: '2026-01-11', orderCount: 20, orderAmount: 2293 },
-  { date: '2026-01-12', orderCount: 80, orderAmount: 8293 },
-  { date: '2026-01-13', orderCount: 100, orderAmount: 10293 },
-  { date: '2026-01-14', orderCount: 10, orderAmount: 1293 },
-  { date: '2026-01-15', orderCount: 40, orderAmount: 4293 }
+  { date: '2026-01-01', orderCount: 156, orderAmount: 45230 },
+  { date: '2026-01-02', orderCount: 203, orderAmount: 58920 },
+  { date: '2026-01-03', orderCount: 178, orderAmount: 51340 },
+  { date: '2026-01-04', orderCount: 245, orderAmount: 72150 },
+  { date: '2026-01-05', orderCount: 312, orderAmount: 89670 },
+  { date: '2026-01-06', orderCount: 289, orderAmount: 83420 },
+  { date: '2026-01-07', orderCount: 267, orderAmount: 76890 },
+  { date: '2026-01-08', orderCount: 298, orderAmount: 85230 },
+  { date: '2026-01-09', orderCount: 334, orderAmount: 96540 },
+  { date: '2026-01-10', orderCount: 378, orderAmount: 108920 },
+  { date: '2026-01-11', orderCount: 412, orderAmount: 118760 },
+  { date: '2026-01-12', orderCount: 389, orderAmount: 112340 },
+  { date: '2026-01-13', orderCount: 356, orderAmount: 102890 },
+  { date: '2026-01-14', orderCount: 423, orderAmount: 121560 },
+  { date: '2026-01-15', orderCount: 445, orderAmount: 128340 }
 ]
 
 // 默认起始日期
@@ -191,67 +191,31 @@ const chartOption = computed(() => {
 
 <template>
   <div class="app-container">
-    <div class="address-layout">
-      <el-row :gutter="20">
-        <el-col :span="6">
-          <div class="out-border">
-            <div class="layout-title">Spring Boot项目学习</div>
-            <div class="color-main address-content">
-              <a href="https://www.macrozheng.com" target="_blank">mall学习教程</a>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="out-border">
-            <div class="layout-title">Spring Cloud项目学习</div>
-            <div class="color-main address-content">
-              <a href="https://cloud.macrozheng.com" target="_blank">mall-swarm学习教程</a>
-            </div>
-          </div>
-        </el-col>
-        <el-col :span="6">
-          <div class="out-border">
-            <div class="layout-title">点Star支持项目</div>
-            <div class="color-main address-content">
-              <a href="https://github.com/macrozheng/mall" target="_blank">mall项目</a>
-            </div>
-          </div>
-        </el-col>
-      </el-row>
-    </div>
     <div class="total-layout">
       <el-row :gutter="20">
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_order" class="total-icon">
             <div class="total-title">今日订单总数</div>
-            <div class="total-value">200</div>
+            <div class="total-value">1,247</div>
           </div>
         </el-col>
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_today_amount" class="total-icon">
             <div class="total-title">今日销售总额</div>
-            <div class="total-value">￥5000.00</div>
+            <div class="total-value">¥358,920.00</div>
           </div>
         </el-col>
         <el-col :span="6">
           <div class="total-frame">
             <img :src="img_home_yesterday_amount" class="total-icon">
             <div class="total-title">昨日销售总额</div>
-            <div class="total-value">￥5000.00</div>
+            <div class="total-value">¥342,150.00</div>
           </div>
         </el-col>
       </el-row>
     </div>
-    <el-card class="mine-layout">
-      <div style="text-align: center">
-        <img width="140px" height="140px"
-          src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg">
-      </div>
-      <div style="text-align: center">扫码关注作者<span class="color-main">公众号</span></div>
-      <div style="text-align: center;margin-top: 5px">获取更多技术干货</div>
-    </el-card>
     <div class="un-handle-layout">
       <div class="layout-title">待处理事务</div>
       <div class="un-handle-content">
@@ -259,19 +223,19 @@ const chartOption = computed(() => {
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待付款订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(38)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">已完成订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(1,523)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待确认收货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(156)</span>
             </div>
           </el-col>
         </el-row>
@@ -279,19 +243,19 @@ const chartOption = computed(() => {
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待发货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(89)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">新缺货登记</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(12)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待处理退款申请</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(23)</span>
             </div>
           </el-col>
         </el-row>
@@ -299,19 +263,19 @@ const chartOption = computed(() => {
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">已发货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(267)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">待处理退货订单</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(45)</span>
             </div>
           </el-col>
           <el-col :span="8">
             <div class="un-handle-item">
               <span class="font-medium">广告位即将到期</span>
-              <span style="float: right" class="color-danger">(10)</span>
+              <span style="float: right" class="color-danger">(3)</span>
             </div>
           </el-col>
         </el-row>
@@ -324,10 +288,10 @@ const chartOption = computed(() => {
             <div class="layout-title">商品总览</div>
             <div style="padding: 40px">
               <el-row>
-                <el-col :span="6" class="color-danger overview-item-value">100</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">400</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">50</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">500</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">2,847</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">15,623</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">234</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">18,704</el-col>
               </el-row>
               <el-row class="font-medium">
                 <el-col :span="6" class="overview-item-title">已下架</el-col>
@@ -343,10 +307,10 @@ const chartOption = computed(() => {
             <div class="layout-title">用户总览</div>
             <div style="padding: 40px">
               <el-row>
-                <el-col :span="6" class="color-danger overview-item-value">100</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">200</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">1000</el-col>
-                <el-col :span="6" class="color-danger overview-item-value">5000</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">328</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">295</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">8,456</el-col>
+                <el-col :span="6" class="color-danger overview-item-value">125,890</el-col>
               </el-row>
               <el-row class="font-medium">
                 <el-col :span="6" class="overview-item-title">今日新增</el-col>
@@ -366,33 +330,33 @@ const chartOption = computed(() => {
           <div style="padding: 20px">
             <div>
               <div style="color: #909399;font-size: 14px">本月订单总数</div>
-              <div style="color: #606266;font-size: 24px;padding: 10px 0">10000</div>
+              <div style="color: #606266;font-size: 24px;padding: 10px 0">38,567</div>
               <div>
-                <span class="color-success" style="font-size: 14px">+10%</span>
+                <span class="color-success" style="font-size: 14px">+15.3%</span>
                 <span style="color: #C0C4CC;font-size: 14px">同比上月</span>
               </div>
             </div>
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本周订单总数</div>
-              <div style="color: #606266;font-size: 24px;padding: 10px 0">1000</div>
+              <div style="color: #606266;font-size: 24px;padding: 10px 0">9,234</div>
               <div>
-                <span class="color-danger" style="font-size: 14px">-10%</span>
+                <span class="color-success" style="font-size: 14px">+8.7%</span>
                 <span style="color: #C0C4CC;font-size: 14px">同比上周</span>
               </div>
             </div>
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本月销售总额</div>
-              <div style="color: #606266;font-size: 24px;padding: 10px 0">100000</div>
+              <div style="color: #606266;font-size: 24px;padding: 10px 0">¥11,234,560</div>
               <div>
-                <span class="color-success" style="font-size: 14px">+10%</span>
+                <span class="color-success" style="font-size: 14px">+12.5%</span>
                 <span style="color: #C0C4CC;font-size: 14px">同比上月</span>
               </div>
             </div>
             <div style="margin-top: 20px;">
               <div style="color: #909399;font-size: 14px">本周销售总额</div>
-              <div style="color: #606266;font-size: 24px;padding: 10px 0">50000</div>
+              <div style="color: #606266;font-size: 24px;padding: 10px 0">¥2,678,340</div>
               <div>
-                <span class="color-danger" style="font-size: 14px">-10%</span>
+                <span class="color-success" style="font-size: 14px">+6.2%</span>
                 <span style="color: #C0C4CC;font-size: 14px">同比上周</span>
               </div>
             </div>

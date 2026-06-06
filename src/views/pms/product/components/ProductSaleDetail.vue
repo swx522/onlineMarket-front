@@ -5,14 +5,6 @@ import type { FormInstance } from 'element-plus'
 import { getMemberLevelListAPI } from '@/apis/memberLevel'
 import type { PmsProductParam } from '@/types/product'
 
-// 定义属性
-const props = defineProps({
-  isEdit: {
-    type: Boolean,
-    default: false
-  }
-})
-
 // 定义事件
 const emit = defineEmits(['prev-step', 'next-step'])
 
