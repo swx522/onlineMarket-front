@@ -7,6 +7,7 @@ import 'normalize.css/normalize.css' // 重置css统一浏览器默认样式
 import { setupSvgIcon } from './icons'
 import 'virtual:svg-icons-register' // 引入SVG图标注册器（关键步骤）
 import '@/router/guard' // 引入vue-router的前置和后置守卫函数
+import '@/styles/dark.scss' // 深色模式样式
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 
 const app = createApp(App)

@@ -2,6 +2,8 @@
 import { computed } from 'vue'
 import Breadcrumb from '@/components/Breadcrumb/index.vue'
 import Hamburger from '@/components/Hamburger/index.vue'
+import ThemeToggle from '@/components/ThemeToggle/index.vue'
+import NotificationPanel from '@/components/NotificationPanel/index.vue'
 import { useAppStore } from '@/stores/app'
 import { useUserStore } from '@/stores/user'
 import { ArrowDown } from '@element-plus/icons-vue'
@@ -54,6 +56,10 @@ const handleLogout = async () => {
         </el-dropdown-menu>
       </template>
     </el-dropdown>
+    <div class="navbar-right-tools">
+      <NotificationPanel></NotificationPanel>
+      <ThemeToggle></ThemeToggle>
+    </div>
   </el-menu>
 </template>
 
@@ -80,8 +86,8 @@ const handleLogout = async () => {
   .avatar-container {
     height: 50px;
     display: inline-block;
-    position: absolute;
-    right: 35px;
+    position: relative;
+    float: right;
 
     .avatar-wrapper {
       cursor: pointer;
@@ -101,6 +107,16 @@ const handleLogout = async () => {
         font-size: 12px;
       }
     }
+  }
+
+  .navbar-right-tools {
+    position: absolute;
+    right: 60px;
+    top: 0;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
   }
 }
 </style>

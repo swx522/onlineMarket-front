@@ -29,12 +29,18 @@ export const constantRouterMap: RouteRecordExt[] = [
         component: () => import('@/views/normal/link/index.vue'),
         meta: { title: '视频教程', icon: 'video' },
       },
-      // {
-      //   path: 'test',
-      //   name: 'test',
-      //   component: () => import('@/views/test/index.vue'),
-      //   meta: { title: '组件测试', icon: 'product-cate' },
-      // },
+// {
+//   path: 'test',
+//   name: 'test',
+//   component: () => import('@/views/test/index.vue'),
+//   meta: { title: '组件测试', icon: 'product-cate' },
+// },
+{
+  path: 'test/features',
+  name: 'testFeatures',
+  component: () => import('@/views/test/features/index.vue'),
+  meta: { title: '新功能演示', icon: 'product' },
+},
     ],
   },
 ]
