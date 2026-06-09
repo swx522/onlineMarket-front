@@ -27,8 +27,6 @@ const loginRules = reactive<FormRules<typeof loginForm>>({
 
 // 登陆按钮进度条
 const loading = ref(false)
-// 公众号对话框是否可见
-const dialogVisible = ref(false)
 
 // 用户名验证函数
 function validateUsername(rule: unknown, value: string, callback: (error?: Error) => void) {
@@ -109,30 +107,13 @@ const handleLogin = () => {
           </el-input>
         </el-form-item>
         <el-form-item style="margin-bottom: 60px;text-align: center">
-          <el-button style="width: 45%" type="primary" :loading="loading" @click="handleLogin">
+          <el-button style="width: 100%" type="primary" :loading="loading" @click="handleLogin">
             登录
-          </el-button>
-          <el-button style="width: 45%" type="primary" @click="dialogVisible = true">
-            获取体验账号
           </el-button>
         </el-form-item>
       </el-form>
     </el-card>
     <img :src="login_center_bg" class="login-center-layout">
-    <el-dialog title="公众号二维码" v-model="dialogVisible" :show-close="false" :center="true" width="30%">
-      <div style="text-align: center">
-        <span class="font-title-large"><span class="color-main font-extra-large">关注公众号</span>回复<span
-            class="color-main font-extra-large">体验</span>获取体验账号</span>
-        <br>
-        <img src="http://macro-oss.oss-cn-shenzhen.aliyuncs.com/mall/banner/qrcode_for_macrozheng_258.jpg" width="160"
-          height="160" style="margin-top: 10px">
-      </div>
-      <template #footer>
-        <span class="dialog-footer">
-          <el-button type="primary" @click="dialogVisible = false">确定</el-button>
-        </span>
-      </template>
-    </el-dialog>
   </div>
 </template>
 
